@@ -1,0 +1,169 @@
+\doxysection{Exercises/\+EX12/\+LED\+\_\+\+Game/\+LED\+\_\+\+Game.ino File Reference}
+\hypertarget{_l_e_d___game_8ino}{}\label{_l_e_d___game_8ino}\index{Exercises/EX12/LED\_Game/LED\_Game.ino@{Exercises/EX12/LED\_Game/LED\_Game.ino}}
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$Liquid\+Crystal\+\_\+\+I2\+C.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Liquid\+Crystal\+\_\+\+I2C \mbox{\hyperlink{_l_e_d___game_8ino_ae084e1bc8ccb35ea289ba0ca4972ea6d}{lcd}} (0x27, 16, 2)
+\begin{DoxyCompactList}\small\item\em LCD object to control the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___game_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the game setup Initializes the LED pins, button pin, and LCD screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___game_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Main game loop that flashes LEDs and checks for button presses. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___game_8ino_ae84e31daa048738d68b19bd5f5cf23b4}{check\+Hit}} (int led)
+\begin{DoxyCompactList}\small\item\em Checks if the player hit the correct LED (pin 3). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___game_8ino_af1de076469d08f717d537d1b6b028566}{reset\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Resets the game counters and LED flashing speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{_l_e_d___game_8ino_ab2b19f050a516d1f66919f210cc61d41}{led\+Pins}} \mbox{[}$\,$\mbox{]} = \{2, 3, 4, 5, 6\}
+\item 
+const int \mbox{\hyperlink{_l_e_d___game_8ino_a4ddb8b6ae564eb22f7c74f2683a63b8e}{button\+Pin}} = 7
+\item 
+int \mbox{\hyperlink{_l_e_d___game_8ino_a5002611f83f5a861df12917dd5651db8}{button\+State}} = HIGH
+\item 
+int \mbox{\hyperlink{_l_e_d___game_8ino_a66f761d0471e843051f3c49af5a1cb82}{last\+Button\+State}} = HIGH
+\item 
+unsigned long \mbox{\hyperlink{_l_e_d___game_8ino_a025a85b33749fd5dde5cb7edd7aea941}{last\+Debounce\+Time}} = 0
+\item 
+const unsigned long \mbox{\hyperlink{_l_e_d___game_8ino_a7d466b68c5e24096e6bcd063f3ab8736}{debounce\+Delay}} = 50
+\item 
+int \mbox{\hyperlink{_l_e_d___game_8ino_a68f2d19e87e34793c1e149749c1d25f2}{hit\+Count}} = 0
+\item 
+int \mbox{\hyperlink{_l_e_d___game_8ino_ad2326463f8b59e546d9516fd43a83286}{miss\+Count}} = 0
+\item 
+int \mbox{\hyperlink{_l_e_d___game_8ino_a218b4f7c6cc2681a99c23a3b089d68b1}{speed}} = 500
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Jarl Pallesen 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/01-\/10
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_l_e_d___game_8ino_ae84e31daa048738d68b19bd5f5cf23b4}\index{LED\_Game.ino@{LED\_Game.ino}!checkHit@{checkHit}}
+\index{checkHit@{checkHit}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{checkHit()}{checkHit()}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_ae84e31daa048738d68b19bd5f5cf23b4} 
+void check\+Hit (\begin{DoxyParamCaption}\item[{int}]{led}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the player hit the correct LED (pin 3). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led} & The index of the LED that was lit (0-\/based) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_l_e_d___game_8ino_ae084e1bc8ccb35ea289ba0ca4972ea6d}\index{LED\_Game.ino@{LED\_Game.ino}!lcd@{lcd}}
+\index{lcd@{lcd}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{lcd()}{lcd()}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_ae084e1bc8ccb35ea289ba0ca4972ea6d} 
+Liquid\+Crystal\+\_\+\+I2C lcd (\begin{DoxyParamCaption}\item[{0x27}]{}{, }\item[{16}]{}{, }\item[{2}]{}{}\end{DoxyParamCaption})}
+
+
+
+LCD object to control the display. 
+
+\Hypertarget{_l_e_d___game_8ino_afe461d27b9c48d5921c00d521181f12f}\index{LED\_Game.ino@{LED\_Game.ino}!loop@{loop}}
+\index{loop@{loop}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_afe461d27b9c48d5921c00d521181f12f} 
+void loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main game loop that flashes LEDs and checks for button presses. 
+
+\texorpdfstring{$<$}{<} Tracks the currently lit LED\Hypertarget{_l_e_d___game_8ino_af1de076469d08f717d537d1b6b028566}\index{LED\_Game.ino@{LED\_Game.ino}!resetGame@{resetGame}}
+\index{resetGame@{resetGame}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{resetGame()}{resetGame()}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_af1de076469d08f717d537d1b6b028566} 
+void reset\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Resets the game counters and LED flashing speed. 
+
+\Hypertarget{_l_e_d___game_8ino_a4fc01d736fe50cf5b977f755b675f11d}\index{LED\_Game.ino@{LED\_Game.ino}!setup@{setup}}
+\index{setup@{setup}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_a4fc01d736fe50cf5b977f755b675f11d} 
+void setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the game setup Initializes the LED pins, button pin, and LCD screen. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_l_e_d___game_8ino_a4ddb8b6ae564eb22f7c74f2683a63b8e}\index{LED\_Game.ino@{LED\_Game.ino}!buttonPin@{buttonPin}}
+\index{buttonPin@{buttonPin}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{buttonPin}{buttonPin}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_a4ddb8b6ae564eb22f7c74f2683a63b8e} 
+const int button\+Pin = 7}
+
+Pin for the button \Hypertarget{_l_e_d___game_8ino_a5002611f83f5a861df12917dd5651db8}\index{LED\_Game.ino@{LED\_Game.ino}!buttonState@{buttonState}}
+\index{buttonState@{buttonState}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{buttonState}{buttonState}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_a5002611f83f5a861df12917dd5651db8} 
+int button\+State = HIGH}
+
+Current button state \Hypertarget{_l_e_d___game_8ino_a7d466b68c5e24096e6bcd063f3ab8736}\index{LED\_Game.ino@{LED\_Game.ino}!debounceDelay@{debounceDelay}}
+\index{debounceDelay@{debounceDelay}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{debounceDelay}{debounceDelay}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_a7d466b68c5e24096e6bcd063f3ab8736} 
+const unsigned long debounce\+Delay = 50}
+
+Debounce delay in ms \Hypertarget{_l_e_d___game_8ino_a68f2d19e87e34793c1e149749c1d25f2}\index{LED\_Game.ino@{LED\_Game.ino}!hitCount@{hitCount}}
+\index{hitCount@{hitCount}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{hitCount}{hitCount}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_a68f2d19e87e34793c1e149749c1d25f2} 
+int hit\+Count = 0}
+
+Counter for hits \Hypertarget{_l_e_d___game_8ino_a66f761d0471e843051f3c49af5a1cb82}\index{LED\_Game.ino@{LED\_Game.ino}!lastButtonState@{lastButtonState}}
+\index{lastButtonState@{lastButtonState}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{lastButtonState}{lastButtonState}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_a66f761d0471e843051f3c49af5a1cb82} 
+int last\+Button\+State = HIGH}
+
+Last button state for debouncing \Hypertarget{_l_e_d___game_8ino_a025a85b33749fd5dde5cb7edd7aea941}\index{LED\_Game.ino@{LED\_Game.ino}!lastDebounceTime@{lastDebounceTime}}
+\index{lastDebounceTime@{lastDebounceTime}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{lastDebounceTime}{lastDebounceTime}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_a025a85b33749fd5dde5cb7edd7aea941} 
+unsigned long last\+Debounce\+Time = 0}
+
+Last debounce time \Hypertarget{_l_e_d___game_8ino_ab2b19f050a516d1f66919f210cc61d41}\index{LED\_Game.ino@{LED\_Game.ino}!ledPins@{ledPins}}
+\index{ledPins@{ledPins}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{ledPins}{ledPins}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_ab2b19f050a516d1f66919f210cc61d41} 
+const int led\+Pins\mbox{[}$\,$\mbox{]} = \{2, 3, 4, 5, 6\}}
+
+Pins for the LEDs \Hypertarget{_l_e_d___game_8ino_ad2326463f8b59e546d9516fd43a83286}\index{LED\_Game.ino@{LED\_Game.ino}!missCount@{missCount}}
+\index{missCount@{missCount}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{missCount}{missCount}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_ad2326463f8b59e546d9516fd43a83286} 
+int miss\+Count = 0}
+
+Counter for misses \Hypertarget{_l_e_d___game_8ino_a218b4f7c6cc2681a99c23a3b089d68b1}\index{LED\_Game.ino@{LED\_Game.ino}!speed@{speed}}
+\index{speed@{speed}!LED\_Game.ino@{LED\_Game.ino}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily \label{_l_e_d___game_8ino_a218b4f7c6cc2681a99c23a3b089d68b1} 
+int speed = 500}
+
+Speed of the LED flashing 
