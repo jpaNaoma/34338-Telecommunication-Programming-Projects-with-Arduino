@@ -1,129 +1,150 @@
-#include <LiquidCrystal.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
 
-// Pin assignments for LEDs and Button
-const int ledPins[] = {2, 3, 4, 5, 6}; // 5 LEDs
-const int buttonPin = 13; // Button
-int buttonState = 0; // Current state of the button
-int lastButtonState = 0; // Previous button state for debouncing
-int hitCount = 0; // Number of correct hits
-int missCount = 0; // Number of misses
-int speed = 500; // Flashing speed (milliseconds)
+/**
+ * @brief LCD object to control the display
+ */
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-// LCD setup
-const int rs = 12, en = 11, d4 = 10, d5 = 9, d6 = 8, d7 = 7;
-LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+// Pin assignments
+const int ledPins[] = {2, 3, 4, 5, 6}; /**< Pins for the LEDs */
+const int buttonPin = 7; /**< Pin for the button */
+int buttonState = HIGH; /**< Current button state */
+int lastButtonState = HIGH; /**< Last button state for debouncing */
+unsigned long lastDebounceTime = 0; /**< Last debounce time */
+const unsigned long debounceDelay = 50; /**< Debounce delay in ms */
+int hitCount = 0; /**< Counter for hits */
+int missCount = 0; /**< Counter for misses */
+int speed = 500; /**< Speed of the LED flashing */
 
+/**
+ * @brief Initializes the game setup
+ * Initializes the LED pins, button pin, and LCD screen.
+ */
 void setup() {
   // Initialize LED pins
   for (int i = 0; i < 5; i++) {
     pinMode(ledPins[i], OUTPUT);
   }
-  pinMode(buttonPin, INPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
 
   // Initialize LCD
-  lcd.begin(16, 2);
+  lcd.init();
+  lcd.backlight();
   lcd.print("Catch the LED!");
-  delay(2000); // Display the start message
+  delay(2000); 
   lcd.clear();
 }
 
+/**
+ * @brief Main game loop that flashes LEDs and checks for button presses.
+ */
 void loop() {
-  static int count = 0;
-  static int currentLED = 0;
+  static int currentLED = 0; /**< Tracks the currently lit LED */
   static unsigned long lastFlashTime = 0;
-  
-  // Handle button debouncing
-  buttonState = digitalRead(buttonPin);
-  if (buttonState == HIGH && lastButtonState == LOW) {
-    // Button pressed
-    checkHit(currentLED);
-    lastButtonState = buttonState;
-  }
-  if (buttonState == LOW) {
-    lastButtonState = buttonState;
-  }
 
-  // Flash LEDs in sequence
-  if (millis() - lastFlashTime > speed) {
-    lastFlashTime = millis();
-
-    // Turn off all LEDs
-    for (int i = 0; i < 5; i++) {
-      digitalWrite(ledPins[i], LOW);
+  // Read button state with debounce
+  int reading = digitalRead(buttonPin);
+  if (reading != lastButtonState) {
+    lastDebounceTime = millis();
+  }
+  if ((millis() - lastDebounceTime) > debounceDelay) {
+    if (reading == LOW && buttonState == HIGH) {
+      checkHit(currentLED);
     }
+    buttonState = reading;
+  }
+  lastButtonState = reading;
 
-    // Turn on the current LED
-    digitalWrite(ledPins[currentLED], HIGH);
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("LED: ");
-    lcd.print(currentLED + 1); // Display LED number (1-5)
+  // Flash LEDs
+  if (hitCount < 8) { // Sequential LED flashing before hitCount reaches 8
+    if (millis() - lastFlashTime > speed) {
+      lastFlashTime = millis();
 
-    // Update the current LED for the next flash
-    currentLED = (currentLED + 1) % 5;
+      // Turn off all LEDs
+      for (int i = 0; i < 5; i++) {
+        digitalWrite(ledPins[i], LOW);
+      }
+
+      // Turn on the current LED
+      digitalWrite(ledPins[currentLED], HIGH);
+
+      // Move to the next LED
+      currentLED = (currentLED + 1) % 5;
+    }
+  } else { // Random LED flashing after hitCount reaches 8
+    if (millis() - lastFlashTime > speed) {
+      lastFlashTime = millis();
+
+      // Turn off all LEDs
+      for (int i = 0; i < 5; i++) {
+        digitalWrite(ledPins[i], LOW);
+      }
+
+      // Turn on a random LED
+      int randomLED = random(0, 5); // Random LED index (0-4)
+      digitalWrite(ledPins[randomLED], HIGH);
+      currentLED = randomLED; // Update current LED to match the randomly chosen LED
+    }
   }
 
-  // Check for win or loss conditions
+  // Check win or loss conditions
   if (hitCount >= 10) {
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("You Win!");
-    delay(3000); // Wait 3 seconds before restarting the game
+    delay(3000); 
     resetGame();
-  } else if (missCount >= 1) {
+  } else if (missCount >= 3) {
     lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("Miss! Try again.");
-    delay(1000); // Wait 1 second before restarting the game
+    lcd.print("Game Over!");
+    delay(3000); 
     resetGame();
   }
-
-  count++;
-  delay(10); // Small delay for debouncing and game logic timing
 }
 
 /**
- * Check if the button was pressed at the correct time
- * @param led The index of the LED that was lit
+ * @brief Checks if the player hit the correct LED (pin 3).
+ * @param led The index of the LED that was lit (0-based)
  */
 void checkHit(int led) {
-  if (led == 2) { // Middle LED (LED 3)
+  if (led == 3) {  // Only register a hit when pin 3 is lit
     hitCount++;
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("Hit: ");
     lcd.print(hitCount);
+
+    // Celebratory LED flashing 
+    for (int i = 0; i < 3; i++) { 
+      for (int j = 0; j < 5; j++) {
+        digitalWrite(ledPins[j], HIGH); 
+      }
+      delay(100); 
+      for (int j = 0; j < 5; j++) {
+        digitalWrite(ledPins[j], LOW); 
+      }
+      delay(100); 
+    }
+
+    speed = max(100, speed - 70); // Increase difficulty by speeding up
   } else {
     missCount++;
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("Miss: ");
     lcd.print(missCount);
-    delay(1000); // Turn off LEDs for 1 second when the player misses
-    resetGame();
+    delay(1000); 
   }
 }
 
 /**
- * Reset the game counters and flashing speed
+ * @brief Resets the game counters and LED flashing speed
  */
 void resetGame() {
   hitCount = 0;
   missCount = 0;
-  speed = 1000; // Reset to initial flashing speed
-  delay(1000); // Wait 1 second before restarting the game
+  speed = 500; // Reset to initial flashing speed
+  delay(1000); // Pause before restarting
 }
-
-/**
- * Doxygen Documentation for the main game logic
- *
- * @brief This program implements the "Catch the LED" game using Arduino and an LCD screen.
- * The player must press a button when the middle LED lights up. The game gets progressively harder
- * as the player hits more LEDs. When the player reaches 10 hits, they win the game.
- *
- * @param led The current LED that is lit up.
- * @param buttonPin The pin to which the button is connected.
- * @param ledPins Array holding the pin numbers for the LEDs.
- * @param lcd LCD object for displaying the game state.
- */
-
