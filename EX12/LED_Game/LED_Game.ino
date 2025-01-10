@@ -1,9 +1,21 @@
+/**
+ * @file LED_Game.ino
+ * @author Jarl Pallesen
+ * @brief 
+ * @version 0.1
+ * @date 2025-01-10
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
 /**
  * @brief LCD object to control the display
  */
+
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 // Pin assignments
@@ -37,9 +49,10 @@ void setup() {
 }
 
 /**
- * @brief Main game loop that flashes LEDs and checks for button presses.
+ *  @brief Main game loop that flashes LEDs and checks for button presses.
+ * 
  */
-void loop() {
+ void loop() {
   static int currentLED = 0; /**< Tracks the currently lit LED */
   static unsigned long lastFlashTime = 0;
 
