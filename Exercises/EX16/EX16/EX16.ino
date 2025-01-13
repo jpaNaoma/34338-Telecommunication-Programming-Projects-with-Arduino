@@ -1,29 +1,34 @@
-#include <dummy.h>
+/**
+ * @file EX16.ino
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2025-01-13
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 
 /* 
 
-16b: What is a server?
-A server is a system or device that provides services or resources, 
-like hosting websites or 
-managing data, to other devices (clients) over a network.
+17a: Print the WiFi RSSI of the ESP8266 to a ThingSpeak channel
+
+17b: Add a two variable graph and fill it with either
+• RSSI and LED on/off
+• Data from two of your sensors
+(you will need to add this to your breadboard)
 
 
-16a: What is a GET request? And how is it different to a POST request
-
-GET request: Retrieves data from a server, typically for 
-reading or displaying (e.g., loading a webpage).
-
-POST request: Sends data to the server, usually to submit 
-or update information (e.g., submitting a form).
-
-
-16c: Follow the guidelines given in the document
- ”Programming with Arduino - Webserver 2018”
+17c: Explore the possibilities writing to and reading from ThingSpeak
 
 
 */
 
-#include <WiFi.h>              // Include WiFi library for ESP32
+
+
+#include <WiFi.h>    
+#include <ThingSpeak.h>          // Include WiFi library for ESP32
 #include <WebServer.h>         // Include WebServer library for ESP32
 #include <ESPmDNS.h>           // Include mDNS library for ESP32
 
