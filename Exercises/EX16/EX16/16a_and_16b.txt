@@ -1,0 +1,7 @@
+16b: What is a server?
+
+A server is a computer that gives data, files, or services to other computers over a network. It handles requests and sends back what’s needed.
+
+16a: What is a GET request, and how is it different from a POST request?
+
+A GET request asks for data from a server, sending info in the URL. A POST request sends data to the server, like filling out and submitting a form.
