@@ -1,0 +1,119 @@
+\doxysection{Thingspeak.\+ino File Reference}
+\hypertarget{_thingspeak_8ino}{}\label{_thingspeak_8ino}\index{Thingspeak.ino@{Thingspeak.ino}}
+{\ttfamily \#include $<$ESP8266\+Wi\+Fi.\+h$>$}\newline
+{\ttfamily \#include $<$DHT.\+h$>$}\newline
+{\ttfamily \#include $<$Thing\+Speak.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_thingspeak_8ino_a2c509dba12bba99883a5be9341b7a0c5}{DHTTYPE}}~DHT11
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DHT \mbox{\hyperlink{_thingspeak_8ino_a954e8d8deb756924c12914cc3cffe82e}{dht}} (\mbox{\hyperlink{_thingspeak_8ino_a36c07f4bebe4701d1682b3691a72307b}{DHTPin}}, \mbox{\hyperlink{_thingspeak_8ino_a2c509dba12bba99883a5be9341b7a0c5}{DHTTYPE}})
+\item 
+void \mbox{\hyperlink{_thingspeak_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{_thingspeak_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_thingspeak_8ino_a587ba0cb07f02913598610049a3bbb79}{ssid}} = "{}Io\+TFotonik"{}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_thingspeak_8ino_aa4a2ebcb494493f648ae1e6975672575}{password}} = "{}Cyberteknologi"{}
+\item 
+Wi\+Fi\+Client \mbox{\hyperlink{_thingspeak_8ino_a323dfc205549b3c13f0a25c1b670708a}{client}}
+\item 
+const int \mbox{\hyperlink{_thingspeak_8ino_a36c07f4bebe4701d1682b3691a72307b}{DHTPin}} = D3
+\item 
+unsigned long \mbox{\hyperlink{_thingspeak_8ino_ac45cf487b7a438e2176288955a338f25}{channel\+ID}} = 900\+XXX
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_thingspeak_8ino_ad7a23c6a78b6b2451a9580baebb295bd}{my\+Write\+APIKey}} = "{}M28\+GRUEIUPXSXXX"{}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_thingspeak_8ino_ab68b888c3d204a4403af6d1b22f6d07c}{server}} = "{}api.\+thingspeak.\+com"{}
+\item 
+const int \mbox{\hyperlink{_thingspeak_8ino_aed82bb58ec20cad0c0fbc3f9b6948573}{posting\+Interval}} = 20 \texorpdfstring{$\ast$}{*} 1000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_thingspeak_8ino_a2c509dba12bba99883a5be9341b7a0c5}\index{Thingspeak.ino@{Thingspeak.ino}!DHTTYPE@{DHTTYPE}}
+\index{DHTTYPE@{DHTTYPE}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{DHTTYPE}{DHTTYPE}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_a2c509dba12bba99883a5be9341b7a0c5} 
+\#define DHTTYPE~DHT11}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_thingspeak_8ino_a954e8d8deb756924c12914cc3cffe82e}\index{Thingspeak.ino@{Thingspeak.ino}!dht@{dht}}
+\index{dht@{dht}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{dht()}{dht()}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_a954e8d8deb756924c12914cc3cffe82e} 
+DHT dht (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_thingspeak_8ino_a36c07f4bebe4701d1682b3691a72307b}{DHTPin}}}]{}{, }\item[{\mbox{\hyperlink{_thingspeak_8ino_a2c509dba12bba99883a5be9341b7a0c5}{DHTTYPE}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_thingspeak_8ino_afe461d27b9c48d5921c00d521181f12f}\index{Thingspeak.ino@{Thingspeak.ino}!loop@{loop}}
+\index{loop@{loop}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_afe461d27b9c48d5921c00d521181f12f} 
+void loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_thingspeak_8ino_a4fc01d736fe50cf5b977f755b675f11d}\index{Thingspeak.ino@{Thingspeak.ino}!setup@{setup}}
+\index{setup@{setup}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_a4fc01d736fe50cf5b977f755b675f11d} 
+void setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_thingspeak_8ino_ac45cf487b7a438e2176288955a338f25}\index{Thingspeak.ino@{Thingspeak.ino}!channelID@{channelID}}
+\index{channelID@{channelID}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{channelID}{channelID}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_ac45cf487b7a438e2176288955a338f25} 
+unsigned long channel\+ID = 900\+XXX}
+
+\Hypertarget{_thingspeak_8ino_a323dfc205549b3c13f0a25c1b670708a}\index{Thingspeak.ino@{Thingspeak.ino}!client@{client}}
+\index{client@{client}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_a323dfc205549b3c13f0a25c1b670708a} 
+Wi\+Fi\+Client client}
+
+\Hypertarget{_thingspeak_8ino_a36c07f4bebe4701d1682b3691a72307b}\index{Thingspeak.ino@{Thingspeak.ino}!DHTPin@{DHTPin}}
+\index{DHTPin@{DHTPin}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{DHTPin}{DHTPin}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_a36c07f4bebe4701d1682b3691a72307b} 
+const int DHTPin = D3}
+
+\Hypertarget{_thingspeak_8ino_ad7a23c6a78b6b2451a9580baebb295bd}\index{Thingspeak.ino@{Thingspeak.ino}!myWriteAPIKey@{myWriteAPIKey}}
+\index{myWriteAPIKey@{myWriteAPIKey}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{myWriteAPIKey}{myWriteAPIKey}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_ad7a23c6a78b6b2451a9580baebb295bd} 
+const char\texorpdfstring{$\ast$}{*} my\+Write\+APIKey = "{}M28\+GRUEIUPXSXXX"{}}
+
+\Hypertarget{_thingspeak_8ino_aa4a2ebcb494493f648ae1e6975672575}\index{Thingspeak.ino@{Thingspeak.ino}!password@{password}}
+\index{password@{password}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_aa4a2ebcb494493f648ae1e6975672575} 
+const char\texorpdfstring{$\ast$}{*} password = "{}Cyberteknologi"{}}
+
+\Hypertarget{_thingspeak_8ino_aed82bb58ec20cad0c0fbc3f9b6948573}\index{Thingspeak.ino@{Thingspeak.ino}!postingInterval@{postingInterval}}
+\index{postingInterval@{postingInterval}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{postingInterval}{postingInterval}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_aed82bb58ec20cad0c0fbc3f9b6948573} 
+const int posting\+Interval = 20 \texorpdfstring{$\ast$}{*} 1000}
+
+\Hypertarget{_thingspeak_8ino_ab68b888c3d204a4403af6d1b22f6d07c}\index{Thingspeak.ino@{Thingspeak.ino}!server@{server}}
+\index{server@{server}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{server}{server}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_ab68b888c3d204a4403af6d1b22f6d07c} 
+const char\texorpdfstring{$\ast$}{*} server = "{}api.\+thingspeak.\+com"{}}
+
+\Hypertarget{_thingspeak_8ino_a587ba0cb07f02913598610049a3bbb79}\index{Thingspeak.ino@{Thingspeak.ino}!ssid@{ssid}}
+\index{ssid@{ssid}!Thingspeak.ino@{Thingspeak.ino}}
+\doxysubsubsection{\texorpdfstring{ssid}{ssid}}
+{\footnotesize\ttfamily \label{_thingspeak_8ino_a587ba0cb07f02913598610049a3bbb79} 
+const char\texorpdfstring{$\ast$}{*} ssid = "{}Io\+TFotonik"{}}
+

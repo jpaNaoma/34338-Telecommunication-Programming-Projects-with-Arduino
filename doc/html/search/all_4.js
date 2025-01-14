@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['en_0',['en',['../_display___l_e_ds__and__temp_8ino.html#a41ca0f2ba69e4a0dc418933afda4ee05',1,'en:&#160;Display_LEDs_and_temp.ino'],['../ex11_8ino.html#a41ca0f2ba69e4a0dc418933afda4ee05',1,'en:&#160;ex11.ino']]],
-  ['ex_2e6_2eino_1',['ex.6.ino',['../ex_86_8ino.html',1,'']]],
-  ['ex1_2eino_2',['ex1.ino',['../ex1_8ino.html',1,'']]],
-  ['ex11_2eino_3',['ex11.ino',['../ex11_8ino.html',1,'']]],
-  ['ex2_2eino_4',['ex2.ino',['../ex2_8ino.html',1,'']]],
-  ['ex3_2eino_5',['EX3.ino',['../_e_x3_8ino.html',1,'']]],
-  ['ex5_2eino_6',['Ex5.ino',['../_ex5_8ino.html',1,'']]],
-  ['ex7_2eino_7',['EX7.ino',['../_e_x7_8ino.html',1,'']]],
-  ['ex8_2eino_8',['EX8.ino',['../_e_x8_8ino.html',1,'']]],
-  ['exercise_5f13_2eino_9',['Exercise_13.ino',['../_exercise__13_8ino.html',1,'']]],
-  ['exercise_5f14_2eino_10',['Exercise_14.ino',['../_exercise__14_8ino.html',1,'']]]
+  ['d4_0',['d4',['../_display___l_e_ds__and__temp_8ino.html#a8e27f8b906cf9f57c1124234c459792e',1,'d4:&#160;Display_LEDs_and_temp.ino'],['../ex11_8ino.html#a8e27f8b906cf9f57c1124234c459792e',1,'d4:&#160;ex11.ino']]],
+  ['d5_1',['d5',['../_display___l_e_ds__and__temp_8ino.html#ad52d32e739245fa26d6cb728bbf31dd0',1,'d5:&#160;Display_LEDs_and_temp.ino'],['../ex11_8ino.html#ad52d32e739245fa26d6cb728bbf31dd0',1,'d5:&#160;ex11.ino']]],
+  ['d6_2',['d6',['../_display___l_e_ds__and__temp_8ino.html#ad1022e721e1fa576ed67afb73831ed70',1,'d6:&#160;Display_LEDs_and_temp.ino'],['../ex11_8ino.html#ad1022e721e1fa576ed67afb73831ed70',1,'d6:&#160;ex11.ino']]],
+  ['d7_3',['d7',['../_display___l_e_ds__and__temp_8ino.html#a7ce0880460ab9afdbb59e308d6f93e04',1,'d7:&#160;Display_LEDs_and_temp.ino'],['../ex11_8ino.html#a7ce0880460ab9afdbb59e308d6f93e04',1,'d7:&#160;ex11.ino']]],
+  ['debouncedelay_4',['debounceDelay',['../_l_e_d___game_8ino.html#a7d466b68c5e24096e6bcd063f3ab8736',1,'LED_Game.ino']]],
+  ['dht_5',['dht',['../_thingspeak_8ino.html#a954e8d8deb756924c12914cc3cffe82e',1,'Thingspeak.ino']]],
+  ['dhtpin_6',['DHTPin',['../_thingspeak_8ino.html#a36c07f4bebe4701d1682b3691a72307b',1,'Thingspeak.ino']]],
+  ['dhttype_7',['DHTTYPE',['../_thingspeak_8ino.html#a2c509dba12bba99883a5be9341b7a0c5',1,'Thingspeak.ino']]],
+  ['display_5fleds_5fand_5ftemp_2eino_8',['Display_LEDs_and_temp.ino',['../_display___l_e_ds__and__temp_8ino.html',1,'']]]
 ];

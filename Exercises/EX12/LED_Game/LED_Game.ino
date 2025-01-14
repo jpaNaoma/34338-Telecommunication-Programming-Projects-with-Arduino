@@ -6,8 +6,13 @@
  * @date 2025-01-10
  * 
  * @copyright Copyright (c) 2025
+ * @mainpage Exercise 12
+ * 
+ * @section Intro
  * 
  */
+
+
 
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>

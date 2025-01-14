@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Exercises in 34338", "index.html", [
+    [ "Exercise 12", "index.html", "index" ],
     [ "README", "md__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

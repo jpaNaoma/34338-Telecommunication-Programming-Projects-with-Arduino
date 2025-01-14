@@ -1,0 +1,83 @@
+\doxysection{Webserver.\+ino File Reference}
+\hypertarget{_webserver_8ino}{}\label{_webserver_8ino}\index{Webserver.ino@{Webserver.ino}}
+{\ttfamily \#include $<$ESP8266\+Wi\+Fi.\+h$>$}\newline
+{\ttfamily \#include $<$Wi\+Fi\+Client.\+h$>$}\newline
+{\ttfamily \#include $<$ESP8266\+Wi\+Fi\+Multi.\+h$>$}\newline
+{\ttfamily \#include $<$ESP8266\+Web\+Server.\+h$>$}\newline
+{\ttfamily \#include $<$ESP8266m\+DNS.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ESP8266\+Web\+Server \mbox{\hyperlink{_webserver_8ino_a58141c4f251beaa1fee89b632d87152f}{server}} (80)
+\item 
+void \mbox{\hyperlink{_webserver_8ino_a8427468f39342a1990703e9f5ce7fd29}{handle\+Root}} ()
+\item 
+void \mbox{\hyperlink{_webserver_8ino_ac23730de88ab78bcaa26c7e3191dbb9d}{handle\+LED}} ()
+\item 
+void \mbox{\hyperlink{_webserver_8ino_a54f2b176a577c7a89bb94da4f12cd06b}{handle\+Not\+Found}} ()
+\item 
+void \mbox{\hyperlink{_webserver_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{_webserver_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ESP8266\+Wi\+Fi\+Multi \mbox{\hyperlink{_webserver_8ino_ad582b7dcd1365231127ef9b24212006b}{wifi\+Multi}}
+\item 
+const int \mbox{\hyperlink{_webserver_8ino_aa6565effcd86b61e6ab132971ff14438}{led}} = D2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_webserver_8ino_ac23730de88ab78bcaa26c7e3191dbb9d}\index{Webserver.ino@{Webserver.ino}!handleLED@{handleLED}}
+\index{handleLED@{handleLED}!Webserver.ino@{Webserver.ino}}
+\doxysubsubsection{\texorpdfstring{handleLED()}{handleLED()}}
+{\footnotesize\ttfamily \label{_webserver_8ino_ac23730de88ab78bcaa26c7e3191dbb9d} 
+void handle\+LED (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_webserver_8ino_a54f2b176a577c7a89bb94da4f12cd06b}\index{Webserver.ino@{Webserver.ino}!handleNotFound@{handleNotFound}}
+\index{handleNotFound@{handleNotFound}!Webserver.ino@{Webserver.ino}}
+\doxysubsubsection{\texorpdfstring{handleNotFound()}{handleNotFound()}}
+{\footnotesize\ttfamily \label{_webserver_8ino_a54f2b176a577c7a89bb94da4f12cd06b} 
+void handle\+Not\+Found (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_webserver_8ino_a8427468f39342a1990703e9f5ce7fd29}\index{Webserver.ino@{Webserver.ino}!handleRoot@{handleRoot}}
+\index{handleRoot@{handleRoot}!Webserver.ino@{Webserver.ino}}
+\doxysubsubsection{\texorpdfstring{handleRoot()}{handleRoot()}}
+{\footnotesize\ttfamily \label{_webserver_8ino_a8427468f39342a1990703e9f5ce7fd29} 
+void handle\+Root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_webserver_8ino_afe461d27b9c48d5921c00d521181f12f}\index{Webserver.ino@{Webserver.ino}!loop@{loop}}
+\index{loop@{loop}!Webserver.ino@{Webserver.ino}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily \label{_webserver_8ino_afe461d27b9c48d5921c00d521181f12f} 
+void loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_webserver_8ino_a58141c4f251beaa1fee89b632d87152f}\index{Webserver.ino@{Webserver.ino}!server@{server}}
+\index{server@{server}!Webserver.ino@{Webserver.ino}}
+\doxysubsubsection{\texorpdfstring{server()}{server()}}
+{\footnotesize\ttfamily \label{_webserver_8ino_a58141c4f251beaa1fee89b632d87152f} 
+ESP8266\+Web\+Server server (\begin{DoxyParamCaption}\item[{80}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_webserver_8ino_a4fc01d736fe50cf5b977f755b675f11d}\index{Webserver.ino@{Webserver.ino}!setup@{setup}}
+\index{setup@{setup}!Webserver.ino@{Webserver.ino}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily \label{_webserver_8ino_a4fc01d736fe50cf5b977f755b675f11d} 
+void setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_webserver_8ino_aa6565effcd86b61e6ab132971ff14438}\index{Webserver.ino@{Webserver.ino}!led@{led}}
+\index{led@{led}!Webserver.ino@{Webserver.ino}}
+\doxysubsubsection{\texorpdfstring{led}{led}}
+{\footnotesize\ttfamily \label{_webserver_8ino_aa6565effcd86b61e6ab132971ff14438} 
+const int led = D2}
+
+\Hypertarget{_webserver_8ino_ad582b7dcd1365231127ef9b24212006b}\index{Webserver.ino@{Webserver.ino}!wifiMulti@{wifiMulti}}
+\index{wifiMulti@{wifiMulti}!Webserver.ino@{Webserver.ino}}
+\doxysubsubsection{\texorpdfstring{wifiMulti}{wifiMulti}}
+{\footnotesize\ttfamily \label{_webserver_8ino_ad582b7dcd1365231127ef9b24212006b} 
+ESP8266\+Wi\+Fi\+Multi wifi\+Multi}
+

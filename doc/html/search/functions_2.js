@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['printanimal_0',['printAnimal',['../_exercise__14_8ino.html#a401b04415467a0545d2373ffceeb15cf',1,'Exercise_14.ino']]]
+  ['handleled_0',['handleLED',['../_e_x16_8ino.html#ac23730de88ab78bcaa26c7e3191dbb9d',1,'handleLED():&#160;EX16.ino'],['../_webserver_8ino.html#ac23730de88ab78bcaa26c7e3191dbb9d',1,'handleLED():&#160;Webserver.ino']]],
+  ['handlenotfound_1',['handleNotFound',['../_e_x16_8ino.html#a54f2b176a577c7a89bb94da4f12cd06b',1,'handleNotFound():&#160;EX16.ino'],['../_webserver_8ino.html#a54f2b176a577c7a89bb94da4f12cd06b',1,'handleNotFound():&#160;Webserver.ino']]],
+  ['handleroot_2',['handleRoot',['../_e_x16_8ino.html#a8427468f39342a1990703e9f5ce7fd29',1,'handleRoot():&#160;EX16.ino'],['../_webserver_8ino.html#a8427468f39342a1990703e9f5ce7fd29',1,'handleRoot():&#160;Webserver.ino']]]
 ];
